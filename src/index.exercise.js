@@ -1,24 +1,22 @@
-// 🐨 you'll need to import react and createRoot from react-dom up here
-import React from 'react'
+import * as React from 'react'
 import {createRoot} from 'react-dom/client'
 import {Logo} from './components/logo'
 
 function App() {
   return (
-    <>
-      <Logo width="90" height="90" />
+    <div>
+      <Logo width="80" height="80" />
       <h1>Bookshelf</h1>
-      <button id="login-button" onClick={e => alert('login was clicked')}>
-        Login
-      </button>
-      <br />
-      <button id="register-button" onClick={e => alert('Register was clicked')}>
-        Register
-      </button>
-    </>
+      <div>
+        <button onClick={() => alert('login clicked')}>Login</button>
+      </div>
+      <div>
+        <button onClick={() => alert('register clicked')}>Register</button>
+      </div>
+    </div>
   )
 }
-const root = document.getElementById('root')
-createRoot(root).render(<App />)
 
-export default App
+const root = createRoot(document.getElementById('root'))
+root.render(<App />)
+export {root}
